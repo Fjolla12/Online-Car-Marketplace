@@ -42,14 +42,21 @@ $basePath  = $isSubPage ? '../' : '';
             </button>
 
             <?php if (isLoggedIn()): ?>
-                <span class="user-badge">
-                    👤 <?php echo htmlspecialchars($_SESSION['user']['name']); ?>
-                    <?php if (isAdmin()): ?>
-                        <small class="role-badge">admin</small>
-                    <?php endif; ?>
-                </span>
-                <a href="<?php echo $basePath; ?>pages/logout.php" class="btn btn-sm btn-danger">Dil</a>
-            <?php else: ?>
+            <span class="user-badge">
+        👤 <?php echo htmlspecialchars($_SESSION['user']['name']); ?>
+        <?php if (isAdmin()): ?>
+            <small class="role-badge">admin</small>
+        <?php endif; ?>
+    </span>
+
+    <a href="<?php echo $basePath; ?>pages/profile.php" class="btn btn-sm">
+        Profili
+    </a>
+
+    <a href="<?php echo $basePath; ?>pages/logout.php" class="btn btn-sm btn-danger">
+        Dil
+    </a>
+<?php else: ?>
                 <a href="<?php echo $basePath; ?>pages/login.php" class="btn btn-sm btn-primary">Kyçu</a>
             <?php endif; ?>
         </div>
