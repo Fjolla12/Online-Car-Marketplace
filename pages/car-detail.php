@@ -29,12 +29,17 @@ require_once '../includes/header.php';
     <a href="listings.php" class="back-link">← Kthehu te lista</a>
 
     <div class="detail-wrap">
-        <div class="detail-image">
-            <span class="car-icon-large"><?php echo $car->isLuxury() ? '🏎️' : '🚗'; ?></span>
-            <?php if ($car->isLuxury()): ?>
-                <span class="badge-luxury">LUXURY</span>
-            <?php endif; ?>
-        </div>
+       <div class="detail-image">
+    <img 
+        src="../assets/images/cars/<?php echo htmlspecialchars($car->getImage()); ?>" 
+        alt="<?php echo htmlspecialchars($car->getBrand() . ' ' . $car->getModel()); ?>"
+        class="car-detail-img"
+    >
+
+    <?php if ($car->isLuxury()): ?>
+        <span class="badge-luxury">LUXURY</span>
+    <?php endif; ?>
+</div>
 
         <div class="detail-info">
             <h1><?php echo htmlspecialchars($car->getBrand() . ' ' . $car->getModel()); ?></h1>
