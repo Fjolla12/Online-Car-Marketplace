@@ -1,0 +1,13 @@
+{
+  "name": "car-marketplace/phase-one",
+  "description": "Online Car Marketplace — PHP Phase I project",
+  "type": "project",
+  "require": {
+    "php": ">=8.0"
+  },
+  "autoload": {
+    "classmap": [
+      "classes/"
+    ]
+  }
+}
