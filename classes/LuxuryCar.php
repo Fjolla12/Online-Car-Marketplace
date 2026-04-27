@@ -15,18 +15,38 @@ class LuxuryCar extends Car {
         string $fuelType,
         string $condition,
         string $sellerName,
+        string $image,
         string $features,
         bool $chauffeurAvailable = false
     ) {
-        parent::__construct($id, $brand, $model, $year, $price, $mileage, $fuelType, $condition, $sellerName);
-        $this->features           = $features;
+        parent::__construct(
+            $id,
+            $brand,
+            $model,
+            $year,
+            $price,
+            $mileage,
+            $fuelType,
+            $condition,
+            $sellerName,
+            $image
+        );
+
+        $this->features = $features;
         $this->chauffeurAvailable = $chauffeurAvailable;
     }
 
-    public function getFeatures(): string      { return $this->features; }
-    public function isChauffeurAvailable(): bool { return $this->chauffeurAvailable; }
+    public function getFeatures(): string {
+        return $this->features;
+    }
 
-    public function isLuxury(): bool { return true; }
+    public function isChauffeurAvailable(): bool {
+        return $this->chauffeurAvailable;
+    }
+
+    public function isLuxury(): bool {
+        return true;
+    }
 
     public function getSummary(): string {
         return parent::getSummary() . " [LUXURY]";
